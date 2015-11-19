@@ -8,6 +8,9 @@ exports.init = function () {
                     throw new TypeError('Not an object or an array');
                 }
                 var objKeys = Object.keys(this);
+                if (objKeys.length < keys) {
+                    return false;
+                }
                 keys.forEach(function (key) {
                     if (objKeys.indexOf(key) === -1) {
                         return false;
@@ -43,12 +46,8 @@ exports.init = function () {
                             break;
                         }
                     }
-                })
-                if (copyValues.length === 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+                });
+                return copyValues.length === 0;
             }
         },
 

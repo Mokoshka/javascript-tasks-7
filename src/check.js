@@ -8,7 +8,7 @@ exports.init = function () {
                     throw new TypeError('Not an object or an array');
                 }
                 var objKeys = Object.keys(this);
-                if (objKeys.length < keys) {
+                if (objKeys.length < keys.length) {
                     return false;
                 }
                 keys.forEach(function (key) {
@@ -85,7 +85,7 @@ exports.init = function () {
 
         checkHasWordsCount: {
             value: function (count) {
-                return this.split(" ").length === count;
+                return this.split(' ').length === count;
             }
         }
     });

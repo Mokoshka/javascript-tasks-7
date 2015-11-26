@@ -56,7 +56,7 @@ exports.init = function () {
                 if (!(this.constructor === Object || this.constructor === Array)) {
                     throw new TypeError('Not an object or an array');
                 }
-                if (!Object.keys(this).length === values.length) {
+                if (!(Object.keys(this).length === values.length)) {
                     return false;
                 }
                 return this.checkContainsValues(values);
